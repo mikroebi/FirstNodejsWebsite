@@ -2,36 +2,37 @@
 
 name: Deploy to GitHub Pages
 
+# این اکشن با هر پوش به شاخه main اجرا می‌شود
 on:
   push:
     branches:
       - main
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# تعیین دسترسی‌های لازم برای اکشن
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# اجازه دادن به تنها یک اجرای همزمان برای جلوگیری از تداخل
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
+  # Job برای ساخت پروژه
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
@@ -40,9 +41,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # پوشه خروجی برای Next.js در حالت export است 'out'
           path: ./out
 
-  # Deployment job
+  # Job برای انتشار پروژه
   deploy:
     environment:
       name: github-pages
