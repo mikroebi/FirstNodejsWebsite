@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, 
   },
-  basePath: '/njsite', 
+  basePath: '/FirstNodejsWebsite', 
 };
 
 export default nextConfig;
