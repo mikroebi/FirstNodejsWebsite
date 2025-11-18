@@ -1,4 +1,4 @@
-import Image from 'next/image'
+//import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -7,12 +7,11 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src="/images/hero.jpg"
             alt="Freshly baked cookies"
-            fill
-            className="object-cover"
-            priority
+            className="w-full h-full object-cover"
+             
           />
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
@@ -37,11 +36,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="h-48 relative">
-                <Image
+                <img
                   src="/images/cookie1.jpg"
                   alt="Classic Chocolate Chip"
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
@@ -54,11 +52,10 @@ export default function Home() {
             </div>
             <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="h-48 relative">
-                <Image
+                <img
                   src="/images/cookie2.jpg"
                   alt="Almond Honey Delight"
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
@@ -71,11 +68,10 @@ export default function Home() {
             </div>
             <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="h-48 relative">
-                <Image
+                <img
                   src="/images/cookie3.jpg"
                   alt="Spiced Gingerbread"
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">

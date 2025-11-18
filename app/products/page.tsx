@@ -1,4 +1,4 @@
-import Image from 'next/image'
+//import Image from 'next/image'
 import Link from 'next/link'
 
 export default function ProductsPage() {
@@ -59,11 +59,10 @@ export default function ProductsPage() {
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="h-64 relative">
-                <Image
+                <img
                   src={product.image}
                   alt={product.name}
-                  fill
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">

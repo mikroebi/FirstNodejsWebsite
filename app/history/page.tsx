@@ -1,4 +1,4 @@
-import Image from 'next/image'
+//import Image from 'next/image'
 import Link from 'next/link'
 
 export default function HistoryPage() {
@@ -36,11 +36,10 @@ export default function HistoryPage() {
                   In our small family kitchen, Grandmother Helga's secret cookie recipe was revived by her granddaughter, Maria. The first batch of "Helga's Honey Cookies" was baked for a local school fair.
                 </p>
                 <div className="relative h-48 rounded-lg overflow-hidden shadow-lg mt-4 md:hidden">
-                  <Image
+                  <img
                     src="/images/history1.jpg"
                     alt="Early days of our bakery"
-                    fill
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -54,11 +53,10 @@ export default function HistoryPage() {
                   With growing demand, we opened our first small shop on Kramgasse in Bern's Old Town. Just 200 square feet, but filled with the aroma of freshly baked cookies and the warmth of Swiss hospitality.
                 </p>
                 <div className="relative h-48 rounded-lg overflow-hidden shadow-lg mt-4">
-                  <Image
+                  <img
                     src="/images/history2.jpg"
                     alt="Our first shop"
-                    fill
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>

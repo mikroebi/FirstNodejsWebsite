@@ -1,4 +1,4 @@
-import Image from 'next/image'
+//import Image from 'next/image'
 import Link from 'next/link'
 
 export default function AboutPage() {
@@ -24,11 +24,10 @@ export default function AboutPage() {
             </Link>
           </div>
           <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-            <Image
+            <img
               src="/images/about.jpg"
               alt="Our bakery in Bern"
-              fill
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
