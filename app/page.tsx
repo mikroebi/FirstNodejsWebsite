@@ -1,65 +1,110 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero.jpg"
+            alt="Freshly baked cookies"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">Bern Cookie Delights</h1>
+          <p className="text-xl md:text-2xl mb-8">Handcrafted German cookies with 15 years of tradition</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/products" className="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition duration-300">
+              Explore Our Cookies
+            </Link>
+            <Link href="/about" className="px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-gray-800 text-white font-semibold rounded-lg transition duration-300">
+              Learn About Us
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Featured Products Section */}
+      <section className="py-16 px-4 bg-amber-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Our Signature Cookies</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+              <div className="h-48 relative">
+                <Image
+                  src="/images/cookie1.jpg"
+                  alt="Classic Chocolate Chip"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Classic Chocolate Chip</h3>
+                <p className="text-gray-600 mb-4">Our timeless recipe with premium Swiss chocolate chunks.</p>
+                <Link href="/products" className="text-amber-600 font-semibold hover:text-amber-700">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+              <div className="h-48 relative">
+                <Image
+                  src="/images/cookie2.jpg"
+                  alt="Almond Honey Delight"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Almond Honey Delight</h3>
+                <p className="text-gray-600 mb-4">A perfect blend of local honey and toasted almonds.</p>
+                <Link href="/products" className="text-amber-600 font-semibold hover:text-amber-700">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+              <div className="h-48 relative">
+                <Image
+                  src="/images/cookie3.jpg"
+                  alt="Spiced Gingerbread"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Spiced Gingerbread</h3>
+                <p className="text-gray-600 mb-4">Traditional German gingerbread with our secret spice blend.</p>
+                <Link href="/products" className="text-amber-600 font-semibold hover:text-amber-700">
+                  Learn More →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-16 px-4 bg-gray-800 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Experience 15 Years of Cookie Excellence</h2>
+          <p className="text-xl mb-8">From our family bakery in Bern to your home, every bite tells a story.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/history" className="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition duration-300">
+              Our Story
+            </Link>
+            <Link href="/about" className="px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-gray-800 text-white font-semibold rounded-lg transition duration-300">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
